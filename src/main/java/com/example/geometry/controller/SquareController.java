@@ -24,8 +24,8 @@ public class SquareController {
         this.squareRepository = squareRepository;
     }
 
-    @GetMapping("/square")
-    public ResponseEntity<Iterable<Square>> getToDos(){
+    @GetMapping("/squares")
+    public ResponseEntity<Iterable<Square>> getSquares(){
         return ResponseEntity.ok(squareRepository.findAll());
     }
 
