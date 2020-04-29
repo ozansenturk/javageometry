@@ -133,7 +133,8 @@ public class Square implements Shape, Comparable<Square>{
 
     @Override
     public Point getCenterPoint() {
-        return null;
+
+        return new Point((this.minPoint.x + this.maxPoint.x) / 2, (this.minPoint.y + this.maxPoint.y) / 2);
     }
 
     @Override

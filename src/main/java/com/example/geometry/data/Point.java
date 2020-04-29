@@ -47,7 +47,7 @@ public class Point implements Shape, Comparable<Point>{
 
     @Override
     public Point getCenterPoint() {
-        return this;
+        return new Point(this.x, this.y);
     }
 
 
