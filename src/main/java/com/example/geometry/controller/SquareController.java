@@ -13,6 +13,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -26,13 +27,17 @@ public class SquareController {
 
     @GetMapping("/squares")
     public ResponseEntity<Iterable<Square>> getSquares(){
+
+        List<Square> squares = (List<Square>) squareRepository.findAll();
+
         return ResponseEntity.ok(squareRepository.findAll());
+
     }
 
     @RequestMapping(value="/square", method = {RequestMethod.
             POST,RequestMethod.PUT})
-    public ResponseEntity<?> createToDo(@Valid @RequestBody Square square,
-                                        Errors errors){
+    public ResponseEntity<?> createSquare(@Valid @RequestBody Square square,
+                                          Errors errors){
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().
                     body(SquareValidationErrorBuilder.fromBindingErrors(errors));
