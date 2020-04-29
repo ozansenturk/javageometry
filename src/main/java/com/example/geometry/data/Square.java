@@ -35,8 +35,6 @@ public class Square implements Shape, Comparable<Square>{
     public Square(double x1, double y1, double x2, double y2) {
         this.minPoint = new Point(x1, y1);
         this.maxPoint = new Point(x2, y2);
-        this.name = name;
-        this.id = id;
     }
 
     public Point getMinPoint() {
