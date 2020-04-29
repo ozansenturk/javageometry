@@ -41,7 +41,28 @@ public class Square implements Shape, Comparable<Square>{
         this.maxPoint = new Point(x2, y2);
     }
 
-    public Point minPoint; // point with minimum coordinates
+    public Point getMinPoint() {
+        return minPoint;
+    }
+
+    public void setMinPoint(Point minPoint) {
+        this.minPoint = minPoint;
+    }
+
+    public Point getMaxPoint() {
+        return maxPoint;
+    }
+
+    public void setMaxPoint(Point maxPoint) {
+        this.maxPoint = maxPoint;
+    }
+
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    @JoinColumn(name="minPoint")
+    public Point minPoint;
+
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    @JoinColumn(name="maxPoint")
     public Point maxPoint; // point with maximum coordinates
 
     @PrePersist

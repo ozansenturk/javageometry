@@ -3,10 +3,20 @@ package com.example.geometry.data;
 import com.example.geometry.util.ShapeUtil;
 
 import javax.naming.OperationNotSupportedException;
+import javax.persistence.*;
 
+@Entity
 public class Point implements Shape, Comparable<Point>{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    private Long Id;
+
+    @Column
     public double x;
+
+    @Column
     public double y;
 
     public Point(double x, double y) {
