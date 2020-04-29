@@ -56,11 +56,11 @@ public class Square implements Shape, Comparable<Square>{
     }
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    @JoinColumn(name="minPoint")
+    @JoinColumn(name="x")
     public Point minPoint;
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    @JoinColumn(name="maxPoint")
+    @JoinColumn(name="y")
     public Point maxPoint; // point with maximum coordinates
 
     @PrePersist
@@ -130,8 +130,6 @@ public class Square implements Shape, Comparable<Square>{
         throw new OperationNotSupportedException("Contains operation in Rectangle does not support " + shape.getClass());
     }
 
-
-    @Override
     public Point getCenterPoint() {
 
         return new Point((this.minPoint.x + this.maxPoint.x) / 2, (this.minPoint.y + this.maxPoint.y) / 2);

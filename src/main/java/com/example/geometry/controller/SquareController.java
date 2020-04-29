@@ -26,11 +26,11 @@ public class SquareController {
     }
 
     @GetMapping("/squares")
-    public ResponseEntity<Iterable<Square>> getSquares(){
+    public ResponseEntity<List<Square>> getSquares(){
 
         List<Square> squares = (List<Square>) squareRepository.findAll();
 
-        return ResponseEntity.ok(squareRepository.findAll());
+        return ResponseEntity.ok(squares);
 
     }
 

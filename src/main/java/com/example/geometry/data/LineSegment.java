@@ -140,7 +140,6 @@ public class LineSegment implements Shape {
         return new LineSegment(p1.clone(), p2.clone());
     }
 
-    @Override
     public Point getCenterPoint() {
         validate();
         return new Point(

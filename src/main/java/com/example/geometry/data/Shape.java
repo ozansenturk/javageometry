@@ -30,14 +30,6 @@ public interface Shape extends Serializable, Cloneable {
      */
     Shape clone();
 
-
-    /**
-     * Calculate center point of any shape
-     *
-     * @return Center point
-     */
-    Point getCenterPoint();
-
     boolean contains(Shape shape) throws OperationNotSupportedException;
 
 }

@@ -46,12 +46,6 @@ public class Point implements Shape, Comparable<Point>{
     }
 
     @Override
-    public Point getCenterPoint() {
-        return new Point(this.x, this.y);
-    }
-
-
-    @Override
     public boolean isIntersected(Shape shape) throws OperationNotSupportedException {
         if (shape instanceof Point)
             return this.equals(shape);
